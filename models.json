@@ -1,18 +1,18 @@
 {
   "name": "Tinybig Model Selection",
-  "version": "1",
+  "version": "2",
   "models": [
     {
-      "id": "gemma-4-2b-it-Q4_K_M",
-      "name": "Gemma 4 2B (Q4)",
-      "size_bytes": 1572864000,
+      "id": "llama-3-2-1b-instruct-q4",
+      "name": "Llama 3.2 1B (Q4)",
+      "size_bytes": 786432000,
       "format": "gguf",
-      "params_b": "2B",
-      "url": "https://huggingface.co/google/gemma-4-2b-it-GGUF/resolve/main/gemma-4-2b-it-Q4_K_M.gguf",
+      "params_b": "1B",
+      "url": "https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF/resolve/main/Llama-3.2-1B-Instruct-Q4_K_M.gguf",
       "sha256": "",
       "recommended": true,
-      "min_ram_mb": 4096,
-      "description": "Google's latest compact model. Fast responses, great for 8GB Macs."
+      "min_ram_mb": 2048,
+      "description": "Ultra-fast tiny model. Runs on any device, even 4GB RAM."
     },
     {
       "id": "phi-3-mini-4k-instruct-q4",
@@ -23,7 +23,7 @@
       "url": "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-gguf/resolve/main/Phi-3-mini-4k-instruct-q4.gguf",
       "sha256": "",
       "recommended": true,
-      "min_ram_mb": 6144,
+      "min_ram_mb": 4096,
       "description": "Microsoft's small but capable model for knowledge tasks."
     },
     {
@@ -44,11 +44,11 @@
       "size_bytes": 4603248640,
       "format": "gguf",
       "params_b": "7B",
-      "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/main/qwen2.5-7b-instruct-q4_k_m.gguf",
+      "url": "https://huggingface.co/bartowski/Qwen2.5-7B-Instruct-GGUF/resolve/main/Qwen2.5-7B-Instruct-Q4_K_M.gguf",
       "sha256": "",
       "recommended": true,
       "min_ram_mb": 8192,
-      "description": "Best-in-class 7B model for knowledge tasks. Requires 16GB+ to run comfortably."
+      "description": "Best-in-class 7B model for knowledge tasks. Requires 16GB+ RAM."
     },
     {
       "id": "mistral-7b-v03-q4",
@@ -56,11 +56,11 @@
       "size_bytes": 4102029312,
       "format": "gguf",
       "params_b": "7B",
-      "url": "https://huggingface.co/mistralai/Mistral-7B-v0.3-GGUF/resolve/main/Mistral-7B-v0.3-Q4_K_M.gguf",
+      "url": "https://huggingface.co/bartowski/Mistral-7B-Instruct-v0.3-GGUF/resolve/main/Mistral-7B-Instruct-v0.3-Q4_K_M.gguf",
       "sha256": "",
       "recommended": false,
       "min_ram_mb": 8192,
-      "description": "Mistral's general-purpose 7B. Good fallback if Qwen is too heavy."
+      "description": "Alternative 7B. Good fallback if Qwen is too heavy."
     }
   ]
 }
