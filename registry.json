@@ -12,7 +12,8 @@
       "size_bytes": 15605,
       "chunk_count": 6,
       "category": "general",
-      "language": "en"
+      "language": "en",
+      "icon": "https://tinybig-ai.github.io/icons/tinybig.svg"
     },
     {
       "id": "keep-guide-en",
@@ -23,7 +24,8 @@
       "size_bytes": 28241,
       "chunk_count": 15,
       "category": "reference",
-      "language": "en"
+      "language": "en",
+      "icon": "https://tinybig-ai.github.io/icons/guide.svg"
     },
     {
       "id": "physics",
@@ -34,7 +36,8 @@
       "size_bytes": 312227,
       "chunk_count": 100,
       "category": "reference",
-      "language": "en"
+      "language": "en",
+      "icon": "https://tinybig-ai.github.io/icons/wikipedia.svg"
     }
   ]
 }
