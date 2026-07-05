@@ -13,6 +13,28 @@
       "chunk_count": 6,
       "category": "general",
       "language": "en"
+    },
+    {
+      "id": "keep-guide-en",
+      "name": "Keep: User Guide",
+      "description": "15 articles covering everything about the Keep app: installation, casks, models, chat, MCP, architecture, privacy, and troubleshooting.",
+      "version": "0.1.0",
+      "download_url": "https://tinybig-ai.github.io/casks/keep-guide-en.cask",
+      "size_bytes": 28241,
+      "chunk_count": 15,
+      "category": "reference",
+      "language": "en"
+    },
+    {
+      "id": "cemrekarakas-com",
+      "name": "Cemre's Blog",
+      "description": "27 pages from Cemre Efe Karakas's personal blog — 160 chunks covering software, tech, languages, and life.",
+      "version": "0.1.0",
+      "download_url": "https://tinybig-ai.github.io/casks/cemrekarakas-com.cask",
+      "size_bytes": 406884,
+      "chunk_count": 160,
+      "category": "personal",
+      "language": "en"
     }
   ]
 }
