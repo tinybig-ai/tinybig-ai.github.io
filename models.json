@@ -51,6 +51,18 @@
       "description": "Best-in-class 7B model for knowledge tasks. Requires 16GB+ RAM."
     },
     {
+      "id": "llama-3-2-3b-instruct-abliterated-q4",
+      "name": "Llama 3.2 3B Uncensored (Q4)",
+      "size_bytes": 2019377472,
+      "format": "gguf",
+      "params_b": "3B",
+      "url": "https://huggingface.co/QuantFactory/Llama-3.2-3B-Instruct-abliterated-GGUF/resolve/main/Llama-3.2-3B-Instruct-abliterated.Q4_K_M.gguf",
+      "sha256": "",
+      "recommended": false,
+      "min_ram_mb": 5120,
+      "description": "Uncensored (abliterated) version of Llama 3.2 3B. Refusal behavior removed via huihui-ai's abliteration, quantized by QuantFactory."
+    },
+    {
       "id": "mistral-7b-v03-q4",
       "name": "Mistral 7B v0.3 (Q4)",
       "size_bytes": 4102029312,
