@@ -24,6 +24,17 @@
       "chunk_count": 15,
       "category": "reference",
       "language": "en"
+    },
+    {
+      "id": "physics",
+      "name": "Wikipedia: Physics",
+      "description": "20 Wikipedia articles about physics.",
+      "version": "0.1.0",
+      "download_url": "https://tinybig-ai.github.io/casks/physics.cask",
+      "size_bytes": 312227,
+      "chunk_count": 100,
+      "category": "reference",
+      "language": "en"
     }
   ]
 }
