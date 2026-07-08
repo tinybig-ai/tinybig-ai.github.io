@@ -44,12 +44,13 @@
     z-index: 100;
     padding: 1.5rem 2.5rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     mix-blend-mode: difference;
   }
 
-  nav a {
+  nav a,
+  .nav-current {
     color: #e8e8ea;
     text-decoration: none;
     font-size: 0.8rem;
@@ -57,6 +58,11 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     transition: opacity 0.3s;
+  }
+
+  .nav-current {
+    color: #3a3a44;
+    cursor: default;
   }
 
   nav a:hover {
@@ -111,11 +117,12 @@
 
   .hero-title .logo-dot {
     display: inline-block;
-    width: 0.45em;
-    height: 0.45em;
+    width: 0.55em;
+    height: 0.55em;
     vertical-align: baseline;
     position: relative;
-    top: 0.08em;
+    top: 0.06em;
+    margin-left: -0.04em;
   }
 
   .hero-title .logo-dot svg {
@@ -470,7 +477,9 @@
 <body>
 
 <nav>
+  <span class="nav-current">tinybig.</span>
   <a href="/keep/">keep.</a>
+  <a href="/labs/">labs</a>
 </nav>
 
 <section class="hero">

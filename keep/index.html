@@ -50,7 +50,8 @@
     mix-blend-mode: difference;
   }
 
-  nav a {
+  nav a,
+  .nav-current {
     color: #e8e8ea;
     text-decoration: none;
     font-size: 0.8rem;
@@ -58,6 +59,11 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     transition: opacity 0.3s;
+  }
+
+  .nav-current {
+    color: #3a3a44;
+    cursor: default;
   }
 
   nav a:hover {
@@ -734,6 +740,8 @@
 <!-- ─── NAV ─── -->
 <nav>
   <a href="/">tinybig.</a>
+  <span class="nav-current">keep.</span>
+  <a href="/labs/">labs</a>
 </nav>
 
 <!-- ─── HERO ─── -->
