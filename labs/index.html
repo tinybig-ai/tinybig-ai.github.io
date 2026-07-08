@@ -42,6 +42,11 @@
     justify-content: space-between;
     align-items: center;
     mix-blend-mode: difference;
+    transition: transform 0.3s ease;
+  }
+
+  nav.nav-hidden {
+    transform: translateY(-100%);
   }
 
   nav a,
@@ -56,8 +61,7 @@
   }
 
   .nav-current {
-    color: #3a3a44;
-    cursor: default;
+    visibility: hidden;
   }
 
   nav a:hover { opacity: 0.6; }
@@ -220,6 +224,22 @@
     <a href="/labs/">labs</a>
   </div>
 </footer>
+
+<script>
+  // ─── NAV HIDE ON SCROLL ───
+  const nav = document.querySelector('nav');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const current = window.scrollY;
+    if (current > lastScroll && current > 80) {
+      nav.classList.add('nav-hidden');
+    } else {
+      nav.classList.remove('nav-hidden');
+    }
+    lastScroll = current;
+  }, { passive: true });
+</script>
 
 </body>
 </html>
