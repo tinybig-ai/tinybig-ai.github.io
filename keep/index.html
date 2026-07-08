@@ -549,11 +549,77 @@
   }
 
   /* ─── RESPONSIVE ─── */
+  /* ─── SCREENSHOTS CASCADE ─── */
+  .screenshots {
+    padding: 6rem 2.5rem 8rem;
+  }
+
+  .screenshots-header {
+    margin-bottom: 4rem;
+  }
+
+  .screenshots-header h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+
+  .screenshots-header p {
+    color: #666678;
+    font-size: 1.05rem;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+
+  .screenshot-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .screenshot-item {
+    flex: 0 0 auto;
+    width: 260px;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .screenshot-item:nth-child(1) { margin-top: 0px; }
+  .screenshot-item:nth-child(2) { margin-top: 12px; }
+  .screenshot-item:nth-child(3) { margin-top: 24px; }
+  .screenshot-item:nth-child(4) { margin-top: 12px; }
+  .screenshot-item:nth-child(5) { margin-top: 0px; }
+
+  .screenshot-item img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #1e1e24;
+    display: block;
+    background: #0a0a0b;
+  }
+
   @media (max-width: 768px) {
     section { padding: 4rem 1.5rem; }
     .hero { padding: 6rem 1.5rem 4rem; }
     .features { padding: 4rem 1.5rem; }
     .team { padding: 4rem 1.5rem; }
+
+    .screenshots { padding: 4rem 1.5rem; }
+
+    .screenshot-item {
+      width: 200px;
+    }
+
+    .screenshot-item:nth-child(1) { margin-top: 0px; }
+    .screenshot-item:nth-child(2) { margin-top: 8px; }
+    .screenshot-item:nth-child(3) { margin-top: 16px; }
+    .screenshot-item:nth-child(4) { margin-top: 8px; }
+    .screenshot-item:nth-child(5) { margin-top: 0px; }
 
     .features-grid {
       grid-template-columns: 1fr;
@@ -605,6 +671,7 @@
 <!-- ─── NAV ─── -->
 <nav>
   <a href="/">tinybig.</a>
+  <a href="#screenshots">views</a>
   <a href="https://github.com/tinybig-ai/keep">github</a>
 </nav>
 
@@ -749,7 +816,21 @@
   </div>
 </section>
 
-
+<!-- ─── SCREENSHOTS ─── -->
+<section class="screenshots" id="screenshots">
+  <div class="screenshots-header reveal">
+    <p class="section-label">views</p>
+    <h2>See keep in action<span style="color:#00A3E0;">.</span></h2>
+    <p>Every interface designed as an industrial instrument. No chrome, no clutter.</p>
+  </div>
+  <div class="screenshot-grid">
+    <div class="screenshot-item reveal"><img src="screenshots/keep-2.jpg" alt="keep chat"></div>
+    <div class="screenshot-item reveal reveal-delay-1"><img src="screenshots/keep-4.jpg" alt="keep models"></div>
+    <div class="screenshot-item reveal reveal-delay-2"><img src="screenshots/keep-5.jpg" alt="keep settings"></div>
+    <div class="screenshot-item reveal reveal-delay-3"><img src="screenshots/keep-7.jpg" alt="keep casks"></div>
+    <div class="screenshot-item reveal reveal-delay-4"><img src="screenshots/keep-8.jpg" alt="keep view"></div>
+  </div>
+</section>
 
 <!-- ─── FOOTER ─── -->
 <footer class="reveal">
