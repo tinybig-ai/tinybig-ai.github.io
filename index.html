@@ -264,8 +264,8 @@
   }
 
   .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 3rem;
   }
 
@@ -278,14 +278,19 @@
     transform: translateY(-4px);
   }
 
+  .team-inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
   .team-photo {
-    width: 100%;
-    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    width: 140px;
+    height: 140px;
     background: #121216;
-    border: 1px solid #1e1e24;
     overflow: hidden;
-    margin-bottom: 1.5rem;
-    position: relative;
+    border-radius: 50%;
   }
 
   .team-photo img,
@@ -300,7 +305,7 @@
     filter: grayscale(1) contrast(1.05);
   }
 
-  .team-member h3 {
+  .team-info h3 {
     font-family: 'Unbounded', sans-serif;
     font-weight: 700;
     font-size: 1.15rem;
@@ -308,14 +313,14 @@
     margin-bottom: 0.3rem;
   }
 
-  .team-member .role {
+  .team-info .role {
     color: #666678;
     font-size: 0.8rem;
     font-weight: 500;
     margin-bottom: 0.75rem;
   }
 
-  .team-member .email {
+  .team-info .email {
     color: #3a3a44;
     font-size: 0.75rem;
     text-decoration: none;
@@ -324,18 +329,18 @@
     font-family: 'Space Grotesk', monospace;
   }
 
-  .team-member .email:hover {
+  .team-info .email:hover {
     color: #a0a0b0;
   }
 
-  .team-member .history {
+  .team-info .history {
     margin-top: 0.75rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
   }
 
-  .team-member .history span {
+  .team-info .history span {
     font-size: 0.65rem;
     color: #3a3a44;
     border: 1px solid #1e1e24;
@@ -344,7 +349,7 @@
     letter-spacing: 0.02em;
   }
 
-  .team-member .history span::before {
+  .team-info .history span::before {
     content: "// ";
     color: #1e1e24;
   }
@@ -413,9 +418,15 @@
       gap: 2rem;
     }
 
-    .team-grid {
-      grid-template-columns: 1fr;
-      max-width: 360px;
+    .team-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+
+    .team-photo {
+      width: 100px;
+      height: 100px;
     }
 
     .geo-block {
@@ -479,10 +490,6 @@
         <h3>mcp-native</h3>
         <p>The Model Context Protocol is not a feature — it is the native communication layer connecting tools, filesystems, and runtimes.</p>
       </div>
-      <div class="principle">
-        <h3>the scale paradox</h3>
-        <p>A small team driving massive scale. High-density precision instruments, not opaque platform monoliths.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -496,16 +503,20 @@
 
   <div class="team-grid">
     <div class="team-member reveal reveal-delay-1">
-      <div class="team-photo">
-        <img src="cemre.jpg" alt="cemre karakas" class="mono">
-      </div>
-      <h3>cemre karakas</h3>
-      <div class="role">co-founder</div>
-      <a href="mailto:cemre@tinybig.ai" class="email">cemre@tinybig.ai</a>
-      <div class="history">
-        <span>rippling</span>
-        <span>amazon</span>
-        <span>udemy</span>
+      <div class="team-inner">
+        <div class="team-photo">
+          <img src="cemre.jpg" alt="cemre karakas" class="mono">
+        </div>
+        <div class="team-info">
+          <h3>cemre karakas</h3>
+          <div class="role">co-founder</div>
+          <a href="mailto:cemre@tinybig.ai" class="email">cemre@tinybig.ai</a>
+          <div class="history">
+            <span>rippling</span>
+            <span>amazon</span>
+            <span>udemy</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
