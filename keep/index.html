@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>keep. — tinybig</title>
+<link rel="icon" type="image/svg+xml" href="/icons/tinybig.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;900&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0b;
+    color: #e8e8ea;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #FF5A00;
+    color: #0a0a0b;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    mix-blend-mode: difference;
+  }
+
+  nav a {
+    color: #e8e8ea;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: opacity 0.3s;
+  }
+
+  nav a:hover {
+    opacity: 0.6;
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    position: relative;
+    padding: 6rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #666678;
+    margin-bottom: 1rem;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2.5rem 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #666678;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(4rem, 12vw, 10rem);
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    color: #e8e8ea;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title .dot {
+    color: #FF5A00;
+  }
+
+  .footer-logo .logo-dot {
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    vertical-align: baseline;
+    position: relative;
+    top: 0.04em;
+  }
+
+  .footer-logo .logo-dot svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    color: #666678;
+    max-width: 480px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #0a0a0b;
+    background: #e8e8ea;
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .hero-cta:hover {
+    background: #FF5A00;
+    transform: translateY(-2px);
+  }
+
+  /* ─── GEOMETRIC SHAPES ─── */
+  .geo-orange {
+    position: absolute;
+    top: -15%;
+    right: -10%;
+    width: 55vw;
+    height: 70vh;
+    background: #FF5A00;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 80%);
+    opacity: 0.12;
+    z-index: 0;
+    transition: transform 0.1s ease-out;
+  }
+
+  .geo-blue {
+    position: absolute;
+    bottom: 5%;
+    left: -5%;
+    width: 35vw;
+    height: 35vh;
+    background: #00A3E0;
+    clip-path: polygon(0% 0%, 100% 30%, 80% 100%, 0% 100%);
+    opacity: 0.10;
+    z-index: 0;
+    transition: transform 0.1s ease-out;
+  }
+
+  .geo-line {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    width: 1px;
+    height: 40vh;
+    background: #1e1e24;
+    z-index: 0;
+  }
+
+  /* ─── FEATURES ─── */
+  .features {
+    padding: 8rem 2.5rem;
+  }
+
+  .features-header {
+    margin-bottom: 4rem;
+  }
+
+  .features-header h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+
+  .features-header p {
+    color: #666678;
+    font-size: 1.05rem;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: #1e1e24;
+    border: 1px solid #1e1e24;
+  }
+
+  .feature-card {
+    background: #0a0a0b;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s;
+    cursor: default;
+  }
+
+  .feature-card:hover {
+    background: #0e0e12;
+  }
+
+  .feature-card:hover .feature-icon {
+    transform: scale(1.05);
+  }
+
+  .feature-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s;
+  }
+
+  .feature-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .feature-card h3 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-card p {
+    color: #666678;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 340px;
+  }
+
+  .feature-indicator {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #1e1e24;
+    margin-top: 1.5rem;
+    transition: background 0.4s;
+  }
+
+  .feature-card:hover .feature-indicator {
+    background: #00A3E0;
+  }
+
+  /* ─── MOCK FRAMES ─── */
+  .mock-frame {
+    margin-top: 2rem;
+    border: 1px solid #1e1e24;
+    background: #08080a;
+    padding: 1rem;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.7rem;
+    color: #3a3a44;
+    line-height: 1.8;
+    min-height: 120px;
+  }
+
+  .mock-frame .prompt {
+    color: #00A3E0;
+  }
+
+  .mock-frame .output {
+    color: #666678;
+  }
+
+  .mock-frame .cursor {
+    display: inline-block;
+    width: 6px;
+    height: 14px;
+    background: #666678;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  /* ─── CASKS SECTION (extra) ─── */
+  .casks-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 4rem;
+    border-top: 1px solid #1e1e24;
+    padding-top: 4rem;
+  }
+
+  .cask-item {
+    padding: 2rem;
+    border: 1px solid #1e1e24;
+    background: #0c0c0e;
+    transition: all 0.3s;
+  }
+
+  .cask-item:hover {
+    border-color: #2a2a34;
+    background: #0e0e12;
+  }
+
+  .cask-item .cask-name {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .cask-item .cask-name .blue {
+    color: #00A3E0;
+  }
+
+  .cask-item .cask-desc {
+    color: #666678;
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .cask-item .cask-stat {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    color: #3a3a44;
+    font-weight: 500;
+  }
+
+  /* ─── TEAM ─── */
+  .team {
+    padding: 8rem 2.5rem 6rem;
+  }
+
+  .team-header {
+    margin-bottom: 4rem;
+  }
+
+  .team-header h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+
+  .team-header p {
+    color: #666678;
+    font-size: 1.05rem;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 3rem;
+  }
+
+  .team-member {
+    position: relative;
+    transition: transform 0.4s;
+  }
+
+  .team-member:hover {
+    transform: translateY(-4px);
+  }
+
+  .team-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #121216;
+    border: 1px solid #1e1e24;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .team-photo img,
+  .team-photo svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .team-photo .mono {
+    filter: grayscale(1) contrast(1.05);
+  }
+
+  .team-photo-placeholder svg {
+    background: #121216;
+  }
+
+  .team-member h3 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+  }
+
+  .team-member .role {
+    color: #666678;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .team-member .email {
+    color: #3a3a44;
+    font-size: 0.75rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s;
+    font-family: 'Space Grotesk', monospace;
+  }
+
+  .team-member .email:hover {
+    color: #a0a0b0;
+  }
+
+  .team-member .history {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .team-member .history span {
+    font-size: 0.65rem;
+    color: #3a3a44;
+    border: 1px solid #1e1e24;
+    padding: 0.2rem 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .team-member .history span::before {
+    content: "// ";
+    color: #1e1e24;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 3rem 2.5rem;
+    border-top: 1px solid #1e1e24;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  footer .footer-logo {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.03em;
+    color: #e8e8ea;
+  }
+
+  footer .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  footer a {
+    color: #666678;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  footer a:hover {
+    color: #e8e8ea;
+  }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ─── CASK ANIMATION ─── */
+  .cask-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #00A3E0;
+    margin-right: 6px;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 6rem 1.5rem 4rem; }
+    .features { padding: 4rem 1.5rem; }
+    .team { padding: 4rem 1.5rem; }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .casks-showcase {
+      grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+      padding: 2rem;
+    }
+
+    .team-grid {
+      grid-template-columns: 1fr;
+      max-width: 360px;
+    }
+
+    .geo-orange {
+      width: 80vw;
+      top: -5%;
+    }
+
+    .geo-blue {
+      width: 60vw;
+    }
+
+    footer {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: clamp(2.5rem, 15vw, 4rem);
+    }
+
+    .team-grid {
+      max-width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="/">tinybig.</a>
+  <a href="/about/">about</a>
+  <a href="https://github.com/tinybig-ai/keep">github</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="geo-orange" id="geoOrange"></div>
+  <div class="geo-blue" id="geoBlue"></div>
+  <div class="geo-line"></div>
+
+  <div class="hero-inner">
+    <p class="hero-eyebrow reveal">product</p>
+    <h1 class="hero-title reveal reveal-delay-1">
+      keep<span class="dot">.</span>
+    </h1>
+    <p class="hero-sub reveal reveal-delay-2">
+      An offline knowledge environment. Modular vector enclaves.
+      Your data, locally fortified.
+    </p>
+    <a href="#features" class="hero-cta reveal reveal-delay-3">
+      explore
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M7 1v12M1 7l6 6 6-6" stroke="#0a0a0b" stroke-width="1.5"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ─── FEATURES ─── -->
+<section class="features" id="features">
+  <div class="features-header reveal">
+    <p class="section-label">capabilities</p>
+    <h2>Everything in keep<span style="color:#FF5A00;">.</span></h2>
+    <p>Four interfaces. One local runtime. Zero compromise on privacy.</p>
+  </div>
+
+  <div class="features-grid">
+    <!-- Chat -->
+    <div class="feature-card reveal reveal-delay-1">
+      <div class="feature-icon">
+        <svg viewBox="0 0 32 32" fill="none">
+          <rect x="2" y="6" width="28" height="20" rx="0" stroke="#e8e8ea" stroke-width="1.5"/>
+          <path d="M10 24v4l6-4" stroke="#e8e8ea" stroke-width="1.5"/>
+          <line x1="9" y1="12" x2="23" y2="12" stroke="#666678" stroke-width="1.5"/>
+          <line x1="9" y1="16" x2="19" y2="16" stroke="#666678" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <h3>chat</h3>
+      <p>Talk to your local LLM. Every message stays on device. No external handshake, no traces.</p>
+      <div class="mock-frame">
+        <span class="prompt">></span> what's the entropy of a black hole?<br>
+        <span class="output">Bekenstein-Hawking: S = kA/4ℓ²p</span><br>
+        <span class="prompt">></span> show me the derivation<span class="cursor"></span>
+      </div>
+      <div class="feature-indicator"></div>
+    </div>
+
+    <!-- Models -->
+    <div class="feature-card reveal reveal-delay-2">
+      <div class="feature-icon">
+        <svg viewBox="0 0 32 32" fill="none">
+          <rect x="4" y="2" width="10" height="10" rx="0" stroke="#e8e8ea" stroke-width="1.5"/>
+          <rect x="18" y="2" width="10" height="10" rx="0" stroke="#e8e8ea" stroke-width="1.5"/>
+          <rect x="4" y="16" width="10" height="10" rx="0" stroke="#e8e8ea" stroke-width="1.5"/>
+          <rect x="18" y="16" width="10" height="10" rx="0" stroke="#e8e8ea" stroke-width="1.5"/>
+          <line x1="14" y1="7" x2="18" y2="7" stroke="#00A3E0" stroke-width="1.5"/>
+          <line x1="9" y1="12" x2="9" y2="16" stroke="#00A3E0" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <h3>models</h3>
+      <p>Switch between local and cloud runtimes. Budget tokens, configure providers, compare outputs.</p>
+      <div class="mock-frame">
+        <span style="color:#3a3a44;">runtime</span><br>
+        <span style="color:#00A3E0;">■</span> <span style="color:#666678;">local   mistral/nemo    12.4k tok/s</span><br>
+        <span style="color:#FF5A00;">◇</span> <span style="color:#666678;">remote  gpt-4o          142 tok/s</span><br>
+        <span style="color:#3a3a44;">active: local</span><span class="cursor"></span>
+      </div>
+      <div class="feature-indicator"></div>
+    </div>
+
+    <!-- Settings -->
+    <div class="feature-card reveal reveal-delay-3">
+      <div class="feature-icon">
+        <svg viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="5" stroke="#e8e8ea" stroke-width="1.5"/>
+          <path d="M16 2v4M16 26v4M2 16h4M26 16h4M5.5 5.5l2.8 2.8M23.7 23.7l2.8 2.8M5.5 26.5l2.8-2.8M23.7 8.3l2.8-2.8" stroke="#666678" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <h3>settings</h3>
+      <p>Fine-tune every parameter. Provider configs, key management, system prompts, context windows.</p>
+      <div class="mock-frame">
+        <span style="color:#3a3a44;">providers</span><br>
+        <span style="color:#666678;">mistral/small-latest</span>  <span style="color:#3a3a44;">••••••••••</span><br>
+        <span style="color:#666678;">openai/gpt-5.5</span>        <span style="color:#3a3a44;">••••••••••</span><br>
+        <span style="color:#00A3E0;">◉</span> <span style="color:#3a3a44;">local-first mode</span>
+      </div>
+      <div class="feature-indicator"></div>
+    </div>
+
+    <!-- Casks -->
+    <div class="feature-card reveal reveal-delay-4">
+      <div class="feature-icon">
+        <svg viewBox="0 0 32 32" fill="none">
+          <rect x="6" y="4" width="20" height="24" rx="0" stroke="#e8e8ea" stroke-width="1.5"/>
+          <line x1="6" y1="10" x2="26" y2="10" stroke="#666678" stroke-width="1.5"/>
+          <line x1="16" y1="4" x2="16" y2="28" stroke="#1e1e24" stroke-width="1.5"/>
+          <circle cx="16" cy="17" r="4" stroke="#00A3E0" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <h3>casks</h3>
+      <p>Self-contained vector knowledge packs. Download, tap, and query offline. No data leaves your machine.</p>
+      <div class="mock-frame">
+        <span style="color:#00A3E0;">■</span> <span style="color:#3a3a44;">cask::physics</span>  <span style="color:#666678;">tapped → 1,420 tok</span><br>
+        <span style="color:#00A3E0;">■</span> <span style="color:#3a3a44;">cask::rust</span>      <span style="color:#666678;">tapped → 3,872 tok</span><br>
+        <span style="color:#3a3a44;">registry: 47 casks available</span>
+      </div>
+      <div class="feature-indicator"></div>
+    </div>
+  </div>
+
+  <!-- Casks Showcase -->
+  <div class="casks-showcase reveal">
+    <div class="cask-item reveal reveal-delay-1">
+      <div class="cask-name"><span class="blue">cask</span>::physics</div>
+      <div class="cask-desc">Quantum mechanics, thermodynamics, and particle physics. 1,420 vectors.</div>
+      <div class="cask-stat"><span class="cask-dot"></span> offline · 2.4 MB</div>
+    </div>
+    <div class="cask-item reveal reveal-delay-2">
+      <div class="cask-name"><span class="blue">cask</span>::tinybig-about-en</div>
+      <div class="cask-desc">Company overview, architecture, and product documentation.</div>
+      <div class="cask-stat"><span class="cask-dot"></span> offline · 0.8 MB</div>
+    </div>
+    <div class="cask-item reveal reveal-delay-3">
+      <div class="cask-name"><span class="blue">cask</span>::keep-guide-en</div>
+      <div class="cask-desc">User guide for keep: installation, configuration, and workflows.</div>
+      <div class="cask-stat"><span class="cask-dot"></span> offline · 1.2 MB</div>
+    </div>
+    <div class="cask-item reveal reveal-delay-4">
+      <div class="cask-name"><span class="blue">cask</span>::registry</div>
+      <div class="cask-desc">47 casks available. Tap into knowledge domains on demand.</div>
+      <div class="cask-stat"><span style="color:#FF5A00;">◇</span> 44 more in registry</div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ─── FOOTER ─── -->
+<footer class="reveal">
+  <div class="footer-logo">tinybig<span class="logo-dot"><svg viewBox="0 0 400 400" aria-hidden="true"><circle cx="170" cy="190" r="105" fill="#FF5A00"/><circle cx="310" cy="251.25" r="48" fill="#00A3E0"/></svg></span></div>
+  <div class="footer-links">
+    <a href="https://github.com/tinybig-ai/keep">keep</a>
+    <a href="https://github.com/tinybig-ai/visor">visor</a>
+    <a href="https://github.com/tinybig-ai/ideas">ideas</a>
+  </div>
+</footer>
+
+<script>
+  // ─── SCROLL REVEAL ───
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ─── PARALLAX GEOMETRIC SHAPES ───
+  const geoOrange = document.getElementById('geoOrange');
+  const geoBlue = document.getElementById('geoBlue');
+
+  window.addEventListener('mousemove', (e) => {
+    const x = e.clientX / window.innerWidth - 0.5;
+    const y = e.clientY / window.innerHeight - 0.5;
+    geoOrange.style.transform = `translate(${x * 20}px, ${y * 15}px)`;
+    geoBlue.style.transform = `translate(${x * -12}px, ${y * -10}px)`;
+  });
+
+  // ─── SMOOTH SCROLL ───
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
