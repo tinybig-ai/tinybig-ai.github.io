@@ -550,6 +550,26 @@
 
   /* ─── RESPONSIVE ─── */
   /* ─── SCREENSHOTS CASCADE ─── */
+  .screenshots-header {
+    margin-bottom: 2rem;
+    max-width: 520px;
+  }
+
+  .screenshots-header h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 0.75rem;
+  }
+
+  .screenshots-header p {
+    color: #666678;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
   .screenshot-grid {
     display: flex;
     flex-wrap: wrap;
@@ -645,7 +665,6 @@
 <!-- ─── NAV ─── -->
 <nav>
   <a href="/">tinybig.</a>
-  <a href="https://github.com/tinybig-ai/keep">github</a>
 </nav>
 
 <!-- ─── HERO ─── -->
@@ -765,6 +784,10 @@
   </div>
 
   <!-- ─── SCREENSHOTS ─── -->
+  <div class="screenshots-header reveal">
+    <h2>See keep in action<span style="color:#00A3E0;">.</span></h2>
+    <p>Every interface designed as an industrial instrument. No chrome, no clutter.</p>
+  </div>
   <div class="screenshot-grid">
     <div class="screenshot-item reveal"><img src="screenshots/keep-2.jpg" alt="keep chat"></div>
     <div class="screenshot-item reveal reveal-delay-1"><img src="screenshots/keep-4.jpg" alt="keep models"></div>
@@ -802,9 +825,8 @@
 <footer class="reveal">
   <div class="footer-logo">tinybig<span class="logo-dot"><svg viewBox="0 0 400 400" aria-hidden="true"><circle cx="170" cy="190" r="105" fill="#FF5A00"/><circle cx="310" cy="251.25" r="48" fill="#00A3E0"/></svg></span></div>
   <div class="footer-links">
-    <a href="https://github.com/tinybig-ai/keep">keep</a>
-    <a href="https://github.com/tinybig-ai/visor">visor</a>
-    <a href="https://github.com/tinybig-ai/ideas">ideas</a>
+    <a href="/labs/">labs</a>
+    <span style="color:#3a3a44;font-size:0.8rem;font-weight:500;">visor / coming soon</span>
   </div>
 </footer>
 
