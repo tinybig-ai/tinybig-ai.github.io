@@ -39,7 +39,8 @@
     z-index: 100;
     padding: 1.5rem 2.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 2rem;
     align-items: center;
     mix-blend-mode: difference;
     transition: transform 0.3s ease;
@@ -61,7 +62,7 @@
   }
 
   .nav-current {
-    visibility: hidden;
+    display: none;
   }
 
   nav a:hover { opacity: 0.6; }
@@ -186,6 +187,17 @@
   @media (max-width: 768px) {
     section { padding: 4rem 1.5rem; }
     .hero { padding: 6rem 1.5rem 4rem; }
+
+    nav {
+      justify-content: space-between;
+      gap: 0;
+    }
+
+    .nav-current {
+      display: inline;
+      visibility: hidden;
+    }
+
     footer {
       flex-direction: column;
       gap: 1rem;
