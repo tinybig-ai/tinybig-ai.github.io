@@ -21,9 +21,19 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  :root {
+    --text-primary: var(--text-primary);
+    --text-secondary: var(--text-secondary);
+    --text-muted: var(--text-muted);
+    --accent-orange: var(--accent-orange);
+    --accent-blue: var(--accent-blue);
+    --bg-canvas: var(--bg-canvas);
+    --border-muted: var(--border-muted);
+  }
+
   body {
-    background: #0a0a0b;
-    color: #e8e8ea;
+    background: var(--bg-canvas);
+    color: var(--text-primary);
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
@@ -32,8 +42,8 @@
   }
 
   ::selection {
-    background: #FF5A00;
-    color: #0a0a0b;
+    background: var(--accent-orange);
+    color: var(--bg-canvas);
   }
 
   nav {
@@ -57,7 +67,7 @@
 
   nav a,
   .nav-current {
-    color: #e8e8ea;
+    color: var(--text-primary);
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 500;
@@ -87,7 +97,7 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #666678;
+    color: var(--text-secondary);
     margin-bottom: 1rem;
   }
 
@@ -116,7 +126,7 @@
     font-size: clamp(4rem, 12vw, 10rem);
     letter-spacing: -0.04em;
     line-height: 0.9;
-    color: #e8e8ea;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
   }
 
@@ -153,7 +163,7 @@
 
   .hero-sub {
     font-size: clamp(1rem, 2vw, 1.35rem);
-    color: #666678;
+    color: var(--text-secondary);
     max-width: 520px;
     line-height: 1.6;
     margin-bottom: 2rem;
@@ -169,22 +179,22 @@
     font-size: 0.85rem;
     color: #a0a0b0;
     text-decoration: none;
-    border: 1px solid #1e1e24;
+    border: 1px solid var(--border-muted);
     padding: 0.65rem 1.4rem;
     transition: all 0.3s;
     font-weight: 500;
   }
 
   .hero-links a:hover {
-    color: #e8e8ea;
-    border-color: #3a3a44;
+    color: var(--text-primary);
+    border-color: var(--text-muted);
     background: #121216;
   }
 
   .hero-links .coming-soon {
     font-size: 0.85rem;
-    color: #3a3a44;
-    border: 1px solid #1e1e24;
+    color: var(--text-muted);
+    border: 1px solid var(--border-muted);
     padding: 0.65rem 1.4rem;
     font-weight: 500;
     cursor: default;
@@ -197,7 +207,7 @@
     right: -5%;
     width: 40vw;
     height: 50vh;
-    background: #00A3E0;
+    background: var(--accent-blue);
     clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 85%);
     opacity: 0.08;
     z-index: 0;
@@ -210,7 +220,7 @@
     left: -8%;
     width: 50vw;
     height: 2px;
-    background: #FF5A00;
+    background: var(--accent-orange);
     opacity: 0.15;
     z-index: 0;
     transform: rotate(-15deg);
@@ -225,7 +235,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    border-top: 1px solid #1e1e24;
+    border-top: 1px solid var(--border-muted);
     padding-top: 4rem;
   }
 
@@ -244,7 +254,7 @@
   }
 
   .principle {
-    border-bottom: 1px solid #1e1e24;
+    border-bottom: 1px solid var(--border-muted);
     padding-bottom: 1.5rem;
   }
 
@@ -259,11 +269,11 @@
     font-size: 1rem;
     letter-spacing: -0.02em;
     margin-bottom: 0.4rem;
-    color: #e8e8ea;
+    color: var(--text-primary);
   }
 
   .principle p {
-    color: #666678;
+    color: var(--text-secondary);
     font-size: 0.85rem;
     line-height: 1.7;
   }
@@ -271,7 +281,7 @@
   /* ─── TEAM ─── */
   .team {
     padding: 6rem 2.5rem 8rem;
-    border-top: 1px solid #1e1e24;
+    border-top: 1px solid var(--border-muted);
   }
 
   .team-header {
@@ -288,7 +298,7 @@
   }
 
   .team-header p {
-    color: #666678;
+    color: var(--text-secondary);
     font-size: 1.05rem;
     max-width: 480px;
     line-height: 1.6;
@@ -345,14 +355,14 @@
   }
 
   .team-info .role {
-    color: #666678;
+    color: var(--text-secondary);
     font-size: 0.8rem;
     font-weight: 500;
     margin-bottom: 0.75rem;
   }
 
   .team-info .email {
-    color: #3a3a44;
+    color: var(--text-muted);
     font-size: 0.75rem;
     text-decoration: none;
     display: inline-block;
@@ -373,8 +383,8 @@
 
   .team-info .history span {
     font-size: 0.65rem;
-    color: #3a3a44;
-    border: 1px solid #1e1e24;
+    color: var(--text-muted);
+    border: 1px solid var(--border-muted);
     padding: 0.2rem 0.6rem;
     font-weight: 500;
     letter-spacing: 0.02em;
@@ -382,13 +392,13 @@
 
   .team-info .history span::before {
     content: "// ";
-    color: #1e1e24;
+    color: var(--border-muted);
   }
 
   /* ─── FOOTER ─── */
   footer {
     padding: 3rem 2.5rem;
-    border-top: 1px solid #1e1e24;
+    border-top: 1px solid var(--border-muted);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -401,7 +411,7 @@
     font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: -0.03em;
-    color: #e8e8ea;
+    color: var(--text-primary);
   }
 
   footer .footer-links {
@@ -410,7 +420,7 @@
   }
 
   footer a {
-    color: #666678;
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 500;
@@ -418,7 +428,7 @@
   }
 
   footer a:hover {
-    color: #e8e8ea;
+    color: var(--text-primary);
   }
 
   /* ─── ANIMATIONS ─── */
@@ -518,7 +528,7 @@
 
 <section class="manifesto">
   <div class="manifesto-grid reveal">
-    <h2>Why tinybig<span style="color:#FF5A00;">?</span></h2>
+    <h2>Why tinybig<span style="color:var(--accent-orange);">?</span></h2>
     <div class="principles">
       <div class="principle">
         <h3>individual power</h3>
@@ -539,7 +549,7 @@
 <section class="team" id="team">
   <div class="team-header reveal">
     <p class="section-label">people</p>
-    <h2>The team behind it<span style="color:#FF5A00;">.</span></h2>
+    <h2>The team behind it<span style="color:var(--accent-orange);">.</span></h2>
     <p>Precision instruments, not platforms.</p>
   </div>
 
@@ -569,7 +579,7 @@
   <div class="footer-links">
     <a href="/keep/">keep.</a>
     <a href="/labs/">labs</a>
-    <span style="color:#3a3a44;font-size:0.8rem;font-weight:500;">visor / coming soon</span>
+    <span style="color:var(--text-muted);font-size:0.8rem;font-weight:500;">visor / coming soon</span>
   </div>
 </footer>
 

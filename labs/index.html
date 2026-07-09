@@ -21,9 +21,19 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  :root {
+    --text-primary: var(--text-primary);
+    --text-secondary: var(--text-secondary);
+    --text-muted: var(--text-muted);
+    --accent-orange: var(--accent-orange);
+    --accent-blue: var(--accent-blue);
+    --bg-canvas: var(--bg-canvas);
+    --border-muted: var(--border-muted);
+  }
+
   body {
-    background: #0a0a0b;
-    color: #e8e8ea;
+    background: var(--bg-canvas);
+    color: var(--text-primary);
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
@@ -31,7 +41,7 @@
     overflow-x: hidden;
   }
 
-  ::selection { background: #FF5A00; color: #0a0a0b; }
+  ::selection { background: var(--accent-orange); color: var(--bg-canvas); }
 
   nav {
     position: fixed;
@@ -52,7 +62,7 @@
 
   nav a,
   .nav-current {
-    color: #e8e8ea;
+    color: var(--text-primary);
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 500;
@@ -98,7 +108,7 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #666678;
+    color: var(--text-secondary);
     margin-bottom: 1rem;
   }
 
@@ -108,15 +118,15 @@
     font-size: clamp(4rem, 12vw, 10rem);
     letter-spacing: -0.04em;
     line-height: 0.9;
-    color: #e8e8ea;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
   }
 
-  .hero-title .dot { color: #FF5A00; }
+  .hero-title .dot { color: var(--accent-orange); }
 
   .hero-sub {
     font-size: clamp(1rem, 2vw, 1.35rem);
-    color: #666678;
+    color: var(--text-secondary);
     max-width: 520px;
     line-height: 1.6;
     margin-bottom: 3rem;
@@ -128,7 +138,7 @@
     right: -10%;
     width: 35vw;
     height: 60vh;
-    background: #FF5A00;
+    background: var(--accent-orange);
     clip-path: polygon(0% 0%, 100% 15%, 85% 100%, 0% 85%);
     opacity: 0.06;
     z-index: 0;
@@ -140,24 +150,24 @@
     left: 5%;
     width: 30vw;
     height: 1px;
-    background: #00A3E0;
+    background: var(--accent-blue);
     opacity: 0.1;
     z-index: 0;
     transform: rotate(8deg);
   }
 
   .placeholder {
-    color: #3a3a44;
+    color: var(--text-muted);
     font-size: 0.9rem;
     font-weight: 500;
-    border: 1px solid #1e1e24;
+    border: 1px solid var(--border-muted);
     padding: 1rem 1.5rem;
     display: inline-block;
   }
 
   footer {
     padding: 3rem 2.5rem;
-    border-top: 1px solid #1e1e24;
+    border-top: 1px solid var(--border-muted);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -175,14 +185,14 @@
   footer .footer-links { display: flex; gap: 1.5rem; }
 
   footer a {
-    color: #666678;
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 500;
     transition: color 0.3s;
   }
 
-  footer a:hover { color: #e8e8ea; }
+  footer a:hover { color: var(--text-primary); }
 
   @media (max-width: 768px) {
     section { padding: 4rem 1.5rem; }
@@ -230,7 +240,7 @@
 </section>
 
 <footer>
-  <div class="footer-logo">tinybig<span style="color:#FF5A00;">.</span></div>
+  <div class="footer-logo">tinybig<span style="color:var(--accent-orange);">.</span></div>
   <div class="footer-links">
     <a href="/keep/">keep.</a>
     <a href="/labs/">labs</a>
