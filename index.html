@@ -22,13 +22,14 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --text-primary: var(--text-primary);
-    --text-secondary: var(--text-secondary);
-    --text-muted: var(--text-muted);
-    --accent-orange: var(--accent-orange);
-    --accent-blue: var(--accent-blue);
-    --bg-canvas: var(--bg-canvas);
-    --border-muted: var(--border-muted);
+    --bg-canvas: #0a0a0b;
+    --text-primary: #e8e8ea;
+    --text-secondary: #88889c;
+    --text-muted: #555568;
+    --border-muted: #1e1e24;
+    --surface-raised: #121216;
+    --accent-orange: #FF5A00;
+    --accent-blue: #00A3E0;
   }
 
   body {
@@ -177,7 +178,7 @@
 
   .hero-links a {
     font-size: 0.85rem;
-    color: #a0a0b0;
+    color: var(--text-secondary);
     text-decoration: none;
     border: 1px solid var(--border-muted);
     padding: 0.65rem 1.4rem;
@@ -188,7 +189,7 @@
   .hero-links a:hover {
     color: var(--text-primary);
     border-color: var(--text-muted);
-    background: #121216;
+    background: var(--surface-raised);
   }
 
   .hero-links .coming-soon {
@@ -329,7 +330,7 @@
     flex-shrink: 0;
     width: 140px;
     height: 140px;
-    background: #121216;
+    background: var(--surface-raised);
     overflow: hidden;
     border-radius: 50%;
   }
@@ -371,7 +372,7 @@
   }
 
   .team-info .email:hover {
-    color: #a0a0b0;
+    color: var(--text-secondary);
   }
 
   .team-info .history {

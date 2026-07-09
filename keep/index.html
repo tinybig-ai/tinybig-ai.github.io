@@ -22,13 +22,14 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --text-primary: var(--text-primary);
-    --text-secondary: var(--text-secondary);
-    --text-muted: var(--text-muted);
-    --accent-orange: var(--accent-orange);
-    --accent-blue: var(--accent-blue);
-    --bg-canvas: var(--bg-canvas);
-    --border-muted: var(--border-muted);
+    --bg-canvas: #0a0a0b;
+    --text-primary: #e8e8ea;
+    --text-secondary: #88889c;
+    --text-muted: #555568;
+    --border-muted: #1e1e24;
+    --surface-raised: #121216;
+    --accent-orange: #FF5A00;
+    --accent-blue: #00A3E0;
   }
 
   body {
@@ -438,7 +439,7 @@
   .team-photo {
     width: 100%;
     aspect-ratio: 1 / 1;
-    background: #121216;
+    background: var(--surface-raised);
     border: 1px solid var(--border-muted);
     overflow: hidden;
     margin-bottom: 1.5rem;
@@ -458,7 +459,7 @@
   }
 
   .team-photo-placeholder svg {
-    background: #121216;
+    background: var(--surface-raised);
   }
 
   .team-member h3 {
@@ -486,7 +487,7 @@
   }
 
   .team-member .email:hover {
-    color: #a0a0b0;
+    color: var(--text-secondary);
   }
 
   .team-member .history {
