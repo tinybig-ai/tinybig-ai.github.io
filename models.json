@@ -1,6 +1,6 @@
 {
   "name": "Tinybig Model Selection",
-  "version": "2",
+  "version": "3",
   "models": [
     {
       "id": "llama-3-2-1b-instruct-q4",
@@ -12,7 +12,11 @@
       "sha256": "",
       "recommended": true,
       "min_ram_mb": 2048,
-      "description": "Ultra-fast tiny model. Runs on any device, even 4GB RAM."
+      "description": "Ultra-fast tiny model. Runs on any device, even 4GB RAM.",
+      "server_flags": {
+        "--flash-attn": "on",
+        "--ctx-size": "4096"
+      }
     },
     {
       "id": "phi-3-mini-4k-instruct-q4",
@@ -24,7 +28,27 @@
       "sha256": "",
       "recommended": true,
       "min_ram_mb": 4096,
-      "description": "Microsoft's small but capable model for knowledge tasks."
+      "description": "Microsoft's small but capable model for knowledge tasks.",
+      "server_flags": {
+        "--flash-attn": "on",
+        "--ctx-size": "4096"
+      }
+    },
+    {
+      "id": "gemma-4-e2b-instruct-q4",
+      "name": "Gemma 4 E2B (Q4)",
+      "size_bytes": 3427877696,
+      "format": "gguf",
+      "params_b": "2.3B",
+      "url": "https://huggingface.co/lmstudio-community/gemma-4-E2B-it-GGUF/resolve/main/gemma-4-E2B-it-Q4_K_M.gguf",
+      "sha256": "",
+      "recommended": true,
+      "min_ram_mb": 4096,
+      "description": "Google's 2.3B model with vision support. Great for multimodal tasks on mobile.",
+      "mmproj_url": "https://huggingface.co/lmstudio-community/gemma-4-E2B-it-GGUF/resolve/main/mmproj-gemma-4-E2B-it-BF16.gguf",
+      "server_flags": {
+        "--flash-attn": "on"
+      }
     },
     {
       "id": "llama-3-2-3b-instruct-q4",
@@ -36,7 +60,14 @@
       "sha256": "",
       "recommended": true,
       "min_ram_mb": 5120,
-      "description": "Meta's efficient 3B model — strong reasoning for its size."
+      "description": "Meta's efficient 3B model — strong reasoning for its size.",
+      "server_flags": {
+        "--flash-attn": "on",
+        "--ctx-size": "4096",
+        "--cache-type-k": "q8_0",
+        "--cache-type-v": "q8_0",
+        "-t": "4"
+      }
     },
     {
       "id": "qwen2-5-7b-instruct-q4",
@@ -48,7 +79,14 @@
       "sha256": "",
       "recommended": true,
       "min_ram_mb": 8192,
-      "description": "Best-in-class 7B model for knowledge tasks. Requires 16GB+ RAM."
+      "description": "Best-in-class 7B model for knowledge tasks. Requires 16GB+ RAM.",
+      "server_flags": {
+        "--flash-attn": "on",
+        "--ctx-size": "4096",
+        "--cache-type-k": "q8_0",
+        "--cache-type-v": "q8_0",
+        "-t": "4"
+      }
     },
     {
       "id": "llama-3-2-3b-instruct-abliterated-q4",
@@ -60,7 +98,14 @@
       "sha256": "",
       "recommended": false,
       "min_ram_mb": 5120,
-      "description": "Uncensored (abliterated) version of Llama 3.2 3B. Refusal behavior removed via huihui-ai's abliteration, quantized by QuantFactory."
+      "description": "Uncensored (abliterated) version of Llama 3.2 3B. Refusal behavior removed via huihui-ai's abliteration, quantized by QuantFactory.",
+      "server_flags": {
+        "--flash-attn": "on",
+        "--ctx-size": "4096",
+        "--cache-type-k": "q8_0",
+        "--cache-type-v": "q8_0",
+        "-t": "4"
+      }
     },
     {
       "id": "mistral-7b-v03-q4",
@@ -72,7 +117,14 @@
       "sha256": "",
       "recommended": false,
       "min_ram_mb": 8192,
-      "description": "Alternative 7B. Good fallback if Qwen is too heavy."
+      "description": "Alternative 7B. Good fallback if Qwen is too heavy.",
+      "server_flags": {
+        "--flash-attn": "on",
+        "--ctx-size": "4096",
+        "--cache-type-k": "q8_0",
+        "--cache-type-v": "q8_0",
+        "-t": "4"
+      }
     }
   ]
 }
